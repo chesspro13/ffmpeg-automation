@@ -1,0 +1,12 @@
+version: "3.3"
+services:
+
+  converter:
+    container_name: converter
+    build: .
+    restart: 'unless-stopped'
+    volumes:
+      - './data:/usr/local/apache2/htdocs/'
+    ports:
+      - '1935:1935'
+      - '7080:7080'
